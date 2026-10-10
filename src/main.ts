@@ -1,6 +1,6 @@
 import { Bot, InputFile } from "grammy";
 
-import { TEXT_CONTENT } from "./textContent";
+import { TEXT_CONTENT } from "./util/textContent";
 import { extractVideoUrl } from "./util/extractTikTokVideo";
 import { createLogger } from "./util/logger";
 import { validateUrl } from "./util/validation";
@@ -8,7 +8,7 @@ import { getVideoStream } from "./util/videoDownloadStream";
 
 const log = createLogger("main");
 
-const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN!;
 
 const bot = new Bot(BOT_TOKEN);
 
