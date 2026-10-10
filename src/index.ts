@@ -8,6 +8,7 @@ const log = createLogger("index");
 
 log.info("loading application");
 
-const { runApp } = await import("./main");
-
-runApp();
+void (async () => {
+	const { runApp } = await import("./main");
+	runApp();
+})();

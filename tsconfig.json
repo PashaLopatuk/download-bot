@@ -1,12 +1,15 @@
 {
-  "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "sourceMap": false,
-    "rootDir": "./src",
-    "outDir": "./dist",
-  },
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "CommonJS",
+		"esModuleInterop": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"sourceMap": false,
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"skipLibCheck": true
+	},
+	"include": ["src/**/*"]
 }
