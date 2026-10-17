@@ -4,7 +4,7 @@ import { createBot } from "../src/bot";
 
 const bot = createBot();
 
-const handleUpdate = webhookCallback(bot, "express");
+const handleUpdate = webhookCallback(bot, "http");
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "POST") {
