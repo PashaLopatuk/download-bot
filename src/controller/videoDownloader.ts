@@ -13,7 +13,7 @@ export const videoDownloaderController = async (ctx: Context) => {
   try {
     await ctx.replyWithChatAction("upload_video");
 
-    const { videoPlayUrl, jar, pageUrl } = await extractVideoUrl(url);
+    const { videoPlayUrl, jar, pageUrl } = await extractVideoUrl(url as any);
 
     await ctx.replyWithChatAction("record_video");
 

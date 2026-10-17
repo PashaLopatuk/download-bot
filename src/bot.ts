@@ -47,7 +47,7 @@ export const createBot = () => {
 
       log.info({ chatId, url }, "sending video to chat");
 
-      return ctx.replyWithVideo(new InputFile(videoStream));
+      return ctx.replyWithVideo(new InputFile(videoStream as any));
     } catch (err) {
       log.error({ err, chatId, url }, "failed to process video URL");
       return ctx.reply(TEXT_CONTENT.INVALID_URL);
