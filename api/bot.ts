@@ -1,7 +1,14 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { webhookCallback } from "grammy";
-
 import { createBot } from "../src/bot";
 
 const bot = createBot();
 
-export default webhookCallback(bot, "std/http");
+const handleUpdate = webhookCallback(bot, "express");
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method === "POST") {
+    return handleUpdate(req, res);
+  }
+  return res.status(200).send("Bot server is running.");
+}
